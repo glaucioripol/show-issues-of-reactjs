@@ -13,7 +13,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --passWithNoTests --no-cache --runInBand",
+    "test": "react-scripts test --passWithNoTests --no-cache --runInBand ",
     "test:coverage": "yarn test --coverage --watchAll=false",
     "eject": "react-scripts eject"
   },
