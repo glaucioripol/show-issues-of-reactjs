@@ -1,9 +1,16 @@
 import React from 'react'
+import { Provider } from 'react-redux'
 
-export function App() {
+import { makeStore } from './redux'
+
+export const App = () => {
+  const store = makeStore()
+
   return (
-    <section>
-      <h1>cleaned</h1>
-    </section>
+    <Provider store={store}>
+      <section>
+        <h1>cleaned</h1>
+      </section>
+    </Provider>
   )
 }
