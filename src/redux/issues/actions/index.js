@@ -1,8 +1,9 @@
-import { issuesTypes } from '.'
+import { issuesTypes } from '..'
 
 export const issuesActions = {
-  request: () => ({
-    type: issuesTypes.RETRIEVE_ISSUES_REQUEST
+  request: (payload) => ({
+    type: issuesTypes.RETRIEVE_ISSUES_REQUEST,
+    payload
   }),
 
   success: (payload) => ({
