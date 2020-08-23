@@ -19,9 +19,7 @@ https://api.github.com/repos/facebook/react/issues?per_page=2 - ver como saber q
 
 ## o que identifiquei que falta fazer
 
-* [ ] fazer testes com redux
 * [ ] adicionar tabela do semantic ui
-* [ ] fazer redux saga para tratar requisicao
 * [ ] fazer uma ui bonitinha
 * [ ] exibir dados na tabela 
   + [ ] Issue Number 
