@@ -3,6 +3,7 @@ import { strategyReducer } from './strategyReducer'
 
 export * from './selectors'
 export * from './issuesTypes'
+export * from './issuesActions'
 
 const initialState = {
   ...defaultState,
