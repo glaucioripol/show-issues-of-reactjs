@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 export function useFilters() {
+  const isLoading = false
   const [filterData, setFilterData] = useState({
     since: null,
     state: '',
@@ -24,8 +25,15 @@ export function useFilters() {
     }
   }
 
+  function handleOnSubmit(e) {
+    e.preventDefault()
+    alert(JSON.stringify(filterData, null, 4))
+  }
+
   return {
+    isLoading,
     filterData,
-    handleOnChange
+    handleOnChange,
+    handleOnSubmit
   }
 }

@@ -7,15 +7,17 @@ import { useFilters } from './useFilters'
 
 export const Filters = () => {
   const {
+    isLoading,
     filterData,
-    handleOnChange
+    handleOnChange,
+    handleOnSubmit
   } = useFilters()
 
   return (
     <section>
       <h2>Filters</h2>
       <div style={{ margin: '0 0 2rem' }}>
-        <Form onSubmit={() => { }}>
+        <Form onSubmit={handleOnSubmit}>
           <Form.Group widths='equal'>
 
             <Form.Field>
@@ -25,6 +27,7 @@ export const Filters = () => {
                 id="since"
                 value={filterData.since}
                 onChange={handleOnChange}
+                disabled={isLoading}
               />
             </Form.Field>
 
@@ -36,6 +39,7 @@ export const Filters = () => {
               options={stateOptions}
               value={filterData.state}
               onChange={handleOnChange}
+              disabled={isLoading}
             />
 
             <Form.Dropdown
@@ -46,6 +50,7 @@ export const Filters = () => {
               options={quantityOptions}
               value={filterData.per_page}
               onChange={handleOnChange}
+              disabled={isLoading}
             />
 
           </Form.Group>
@@ -54,7 +59,7 @@ export const Filters = () => {
             circular
             fluid
             color="instagram"
-            loading
+            loading={isLoading}
             size="big"
             disabled={false}
           >
