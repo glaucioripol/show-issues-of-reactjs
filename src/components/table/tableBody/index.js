@@ -1,34 +1,47 @@
-import React from 'react'
-import { Icon, Table } from 'semantic-ui-react'
+import React, { useCallback } from 'react'
+import PropTypes from 'prop-types'
+import { Table } from 'semantic-ui-react'
 
-export function TableBody() {
+export function TableBody({ keysOfData, data }) {
+  const makeRowsCB = useCallback(makeRows, [keysOfData])(keysOfData, data)
+  function makeRows(keys, dataContent) {
+    return (
+      <Table.Row>
+        {
+          dataContent.map(({
+            content,
+            isNegative,
+            isPositive
+          }) => {
+            return keys.map((key, index) => {
+              return (
+                <Table.Cell key={index} negative={isNegative} positive={isPositive}>
+                  {JSON.stringify(content[key], null, 2)}
+                </Table.Cell>
+              )
+            })
+          })
+        }
+      </Table.Row>
+    )
+  }
+
   return (
     <Table.Body>
-      <Table.Row>
-        <Table.Cell>No Name Specified</Table.Cell>
-        <Table.Cell>Unknown</Table.Cell>
-        <Table.Cell negative>None</Table.Cell>
-      </Table.Row>
-      <Table.Row positive>
-        <Table.Cell>Jimmy</Table.Cell>
-        <Table.Cell>
-          <Icon name='checkmark' />
-    Approved
-        </Table.Cell>
-        <Table.Cell>None</Table.Cell>
-      </Table.Row>
-      <Table.Row>
-        <Table.Cell>Jamie</Table.Cell>
-        <Table.Cell>Unknown</Table.Cell>
-        <Table.Cell positive>
-          <Icon name='close' />
-    Requires call
-        </Table.Cell>
-      </Table.Row>
-      <Table.Row negative>
-        <Table.Cell>Jill</Table.Cell>
-        <Table.Cell>Unknown</Table.Cell>
-        <Table.Cell>None</Table.Cell>
-      </Table.Row>
-    </Table.Body>)
+      {makeRowsCB}
+    </Table.Body>
+  )
+}
+
+TableBody.propTypes = {
+  keysOfData: PropTypes
+    .arrayOf(PropTypes.string.isRequired)
+    .isRequired,
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      content: PropTypes.string.isRequired,
+      isNegative: PropTypes.bool.isRequired,
+      isPositive: PropTypes.bool.isRequired
+    }).isRequired
+  ).isRequired
 }

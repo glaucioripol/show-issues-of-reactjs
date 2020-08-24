@@ -1,8 +1,15 @@
 import React from 'react'
-import { MyTable } from '../../components'
+
+import { Header } from '../../components'
+import { HomeContent } from './homeContent'
+
+// new URLSearchParams(params).toString() - querystring
 
 export function Home() {
   return (
-    <MyTable />
+    <>
+      <Header/>
+      <HomeContent/>
+    </>
   )
 }

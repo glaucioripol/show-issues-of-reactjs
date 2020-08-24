@@ -1,0 +1,13 @@
+.container {
+  padding: 2rem 4rem;
+  height: auto;
+  width: 100vw;
+}
+
+.container__table {
+  overflow-x: auto;
+  background-color: #fff;
+  border-radius: 0.4rem;
+  box-shadow: 0 2px 4px 3px rgb(0, 0, 0, 0.15);
+  padding: 1.5rem;
+}
