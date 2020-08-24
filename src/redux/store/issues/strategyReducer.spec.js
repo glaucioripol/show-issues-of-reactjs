@@ -1,44 +1,8 @@
-import { strategyReducer, initialState, issuesTypes } from '.'
 import faker from 'faker'
 
-function mocksOfRequest(type, hasError = false, isLoading = false, errorMessage = '') {
-  const { functionToTest, MOCKED_ACTION } = commonMocks(type)
+import { initialState, issuesTypes } from '.'
 
-  const EXPECTED_RETURN = {
-    ...initialState,
-    ...MOCKED_ACTION.payload,
-    hasError,
-    isLoading,
-    errorMessage
-  }
-
-  return {
-    functionToTest,
-    MOCKED_ACTION,
-    EXPECTED_RETURN
-  }
-}
-
-function mockSuccess(type) {
-  const { functionToTest, MOCKED_ACTION } = commonMocks(type)
-
-  return {
-    functionToTest,
-    MOCKED_ACTION
-  }
-}
-
-function commonMocks(type) {
-  const functionToTest = strategyReducer[type]
-
-  const MOCKED_ACTION = {
-    payload: faker.random.objectElement()
-  }
-  return {
-    functionToTest,
-    MOCKED_ACTION
-  }
-}
+import { mocksOfRequest, mockSuccess } from '../../../tests/mocks/reduxIssuesMocks'
 
 describe('strategyReducer', () => {
   describe('Requests', () => {
