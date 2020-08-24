@@ -1,12 +1,14 @@
 import React from 'react'
 import './header.css'
 
+import { icReact } from '../../assets/img'
+
 export const Header = () => (
   <header className="header">
     <figure>
       <img
         className="header__icon"
-        src={require('../../assets/icReact.svg')}
+        src={icReact}
         alt="icon of react"
         loading="lazy"
       />
