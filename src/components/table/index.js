@@ -7,7 +7,6 @@ import { TableBody } from './tableBody'
 
 export const MyTable = ({ titles, keysOfData, data }) => (
   <Table celled >
-
     <TableHeader headerTitles={titles} />
     <TableBody keysOfData={keysOfData} data={data} />
   </Table>

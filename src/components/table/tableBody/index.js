@@ -5,25 +5,25 @@ import { Table } from 'semantic-ui-react'
 export function TableBody({ keysOfData, data }) {
   const makeRowsCB = useCallback(makeRows, [keysOfData])(keysOfData, data)
   function makeRows(keys, dataContent) {
-    return (
-      <Table.Row>
-        {
-          dataContent.map(({
-            content,
-            isNegative,
-            isPositive
-          }) => {
-            return keys.map((key, index) => {
+    return dataContent.map(({
+      content,
+      isNegative,
+      isPositive
+    }) => {
+      return (
+        <Table.Row key={`${content}-${isNegative}-${isPositive}`}>
+          {
+            keys.map((key, index) => {
               return (
                 <Table.Cell key={index} negative={isNegative} positive={isPositive}>
                   {JSON.stringify(content[key], null, 2)}
                 </Table.Cell>
               )
             })
-          })
-        }
-      </Table.Row>
-    )
+          }
+        </Table.Row>
+      )
+    })
   }
 
   return (
