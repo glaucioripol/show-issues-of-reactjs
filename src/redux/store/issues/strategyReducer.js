@@ -17,12 +17,13 @@ export const strategyReducer = {
     ...state,
     isLoading: false,
     hasError: false,
+    errorMessage: '',
     issues: action.payload
   }),
   [issuesTypes.RETRIEVE_ISSUES_FAILURE]: (state, action) => ({
     ...state,
     isLoading: false,
     hasError: true,
-    issues: action.payload
+    errorMessage: action.payload
   })
 }

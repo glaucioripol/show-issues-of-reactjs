@@ -1,1 +1,1 @@
-export * from './issues'
+export { issuesReducer, issuesState } from './issues'

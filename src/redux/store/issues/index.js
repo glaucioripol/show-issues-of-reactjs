@@ -1,11 +1,12 @@
 import { defaultState } from '../../defaultState'
 import { strategyReducer } from './strategyReducer'
 
+export { strategyReducer }
 export * from './selectors'
 export * from './issuesTypes'
 export * from './issuesActions'
 
-const initialState = {
+export const initialState = {
   ...defaultState,
   issues: [{
     content: {
