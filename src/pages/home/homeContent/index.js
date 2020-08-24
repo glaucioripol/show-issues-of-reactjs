@@ -1,8 +1,8 @@
 import React from 'react'
 
 import { Container } from 'semantic-ui-react'
-import { MyTable } from '../../../components'
 import { Filters } from './filters'
+import { ContainerTable } from './containerTable'
 
 import './home.css'
 
@@ -12,9 +12,7 @@ export function HomeContent() {
 
       <Filters/>
 
-      <main className='container__table'>
-        <MyTable />
-      </main>
+      <ContainerTable/>
 
     </Container>
   )

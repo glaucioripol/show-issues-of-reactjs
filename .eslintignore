@@ -4,3 +4,4 @@ coverage
 *.css
 *.scss
 *.sass
+*.json
