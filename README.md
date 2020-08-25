@@ -6,6 +6,9 @@ fazer uma UI para exibir os status dos problemas do projeto React no GitHub, con
 
 <img src="https://static-cms.hotjar.com/images/finding-website_bugs.width-750.png">
 
+## UI criada para desafio
+<img src="./uiPrint.png">
+
 ## dependências
 
 ## dependências de desenvolvimento
