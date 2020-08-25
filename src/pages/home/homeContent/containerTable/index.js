@@ -1,12 +1,10 @@
 import React from 'react'
 
-import { Loader } from 'semantic-ui-react'
-
-import { MyTable } from '../../../../components'
-
 import { tableConfig } from './tableConfig'
 
 import { useDataContainerTable } from './useDataContainerTable'
+
+import { MyTable, Loader } from '../../../../components'
 
 export function ContainerTable() {
   const { issuesState } = useDataContainerTable()
@@ -16,8 +14,9 @@ export function ContainerTable() {
         titles={tableConfig.titles}
         keysOfData={tableConfig.keysOfData}
         data={issuesState.issues}
+        loading={issuesState.isLoading}
       />
-      <Loader active size='large'>Loading</Loader>
+      { issuesState.isLoading && <Loader /> }
     </main>
   )
 }

@@ -4,12 +4,17 @@ import PropTypes from 'prop-types'
 import { Table } from 'semantic-ui-react'
 import { TableHeader } from './tableHeader'
 import { TableBody } from './tableBody'
+import { PlaceholderTable } from './placeholderTable'
 
-export const MyTable = ({ titles, keysOfData, data }) => (
-  <Table celled >
-    <TableHeader headerTitles={titles} />
-    <TableBody keysOfData={keysOfData} data={data} />
-  </Table>
+export const MyTable = ({ titles, keysOfData, data, loading }) => (
+  loading
+    ? (<PlaceholderTable/>)
+    : (
+      <Table celled >
+        <TableHeader headerTitles = { titles } />
+        <TableBody keysOfData={keysOfData} data={data} />
+      </Table >
+    )
 )
 
 MyTable.propTypes = {
@@ -25,5 +30,6 @@ MyTable.propTypes = {
       isNegative: PropTypes.bool.isRequired,
       isPositive: PropTypes.bool.isRequired
     }).isRequired
-  ).isRequired
+  ).isRequired,
+  loading: PropTypes.bool.isRequired
 }
