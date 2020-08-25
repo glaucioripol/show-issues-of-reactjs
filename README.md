@@ -19,6 +19,7 @@ https://api.github.com/repos/facebook/react/issues?per_page=2 - ver como saber q
 
 ## o que identifiquei que falta fazer
 
+* [x] adicionar redux
 * [x] adicionar tabela do semantic ui
 * [x] fazer uma ui bonitinha
 * [x] exibir dados na tabela 
@@ -28,7 +29,8 @@ https://api.github.com/repos/facebook/react/issues?per_page=2 - ver como saber q
   + [x] Updated At
   + [x] Labels
   + [x] State
+* [x] fazer requisição para o endpoint
+* [ ] adicionar paginação
+* [ ] adicionar funcionalide dos filtros
 * [ ] escrever Readme
   + [ ] explicar porque das minhas escolhas
-* [x] fazer requisição para o endpoint
-* [ ] adicionar funcionalide dos filtros
