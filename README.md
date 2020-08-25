@@ -26,9 +26,9 @@ https://api.github.com/repos/facebook/react/issues?per_page=2 - ver como saber q
   + [x] Title
   + [x] Created At
   + [x] Updated At
-  + [ ] Labels
+  + [x] Labels
   + [x] State
 * [ ] escrever Readme
   + [ ] explicar porque das minhas escolhas
-* [ ] fazer requisição para o endpoint
+* [x] fazer requisição para o endpoint
 * [ ] adicionar funcionalide dos filtros
