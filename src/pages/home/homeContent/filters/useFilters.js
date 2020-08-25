@@ -1,7 +1,13 @@
 import { useState } from 'react'
+import { useSelector } from 'react-redux'
+
+import { issuesState as issuesData } from '../../../../redux/store/issues'
 
 export function useFilters() {
-  const isLoading = false
+  const issuesState = useSelector(issuesData)
+
+  const isLoading = issuesState.isLoading
+
   const [filterData, setFilterData] = useState({
     since: null,
     state: '',
