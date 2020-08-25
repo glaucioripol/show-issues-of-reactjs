@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { Loader } from 'semantic-ui-react'
+
 import { MyTable } from '../../../../components'
 
 import { tableConfig } from './tableConfig'
@@ -15,6 +17,7 @@ export function ContainerTable() {
         keysOfData={tableConfig.keysOfData}
         data={issuesState.issues}
       />
+      <Loader active size='large'>Loading</Loader>
     </main>
   )
 }

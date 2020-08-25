@@ -4,7 +4,7 @@ export const tableConfig = {
     'Title',
     'Created At',
     'Updated At',
-    // 'Labels',
+    'Labels',
     'State'
   ],
   keysOfData: [
@@ -12,7 +12,7 @@ export const tableConfig = {
     'title',
     'created_at',
     'updated_at',
-    // 'labels',
+    'labels',
     'state'
   ]
 }
