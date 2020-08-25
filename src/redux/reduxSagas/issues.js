@@ -13,9 +13,9 @@ export function * retrieveIssuesSaga() {
   try {
     // const response = yield call(retrieveIssues)
     // const payload = yield response.json()
-    // const updateData = payload.map(formatContentToTable)
-    const updateData = mockedData.map(formatContentToTable)
-    yield put(issuesActions.success(updateData))
+    // const updatedData = payload.map(formatContentToTable)
+    const updatedData = mockedData.map(formatContentToTable)
+    yield put(issuesActions.success(updatedData))
   } catch (err) {
     yield put(issuesActions.failure(err.message))
   }
@@ -25,10 +25,10 @@ export function * retrieveIssuesWithFiltersSaga({ payload }) {
   try {
     // const response = yield call(retrieveIssues)
     // const payloadResponse = yield response.json()
-    // const updateData = payload.map(formatContentToTable)
+    // const updatedData = payload.map(formatContentToTable)
     // const queryString = new URLSearchParams(payload).toString()
-    const updateData = mockedData.map(formatContentToTable)
-    yield put(issuesActions.success(updateData))
+    const updatedData = mockedData.map(formatContentToTable)
+    yield put(issuesActions.success(updatedData))
   } catch (err) {
     yield put(issuesActions.failure(err.message))
   }

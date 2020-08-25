@@ -11,7 +11,7 @@ export function useFilters() {
   const [filterData, setFilterData] = useState({
     since: null,
     state: '',
-    per_page: '10'
+    per_page: ''
   })
 
   function handleOnChange({ target }, semanticUiTarget = {}) {
